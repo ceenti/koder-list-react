@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.bienvenida {
+  height: 200px;
+  background-color: darkgray;
+  border-radius: 8px;
+  color: green;
+
+}

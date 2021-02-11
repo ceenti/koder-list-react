@@ -48,32 +48,48 @@ class App extends Component{
   render(){
     let koders = this.state.filteredList.length ? this.state.filteredList : this.state.kodersList
     return(
-      <>
-        <h1>Bienvenido a la lista de koders</h1>
-        <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Generation</th>
-            <th scope="col">Type of Bootcamp</th>
-          </tr>
-        </thead>
-        <KodersList 
-          listHandler = {koders}
-        />
-        </table>
     
-
-        <Form
-          newKoderData = {this.onclickHandler}
-        />
-
-        <div>
-           <input type="text" placeholder="Ingresa el nombre" onChange={this.onHandlerFinder}/>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="container">
+            <div className="row d-flex">
+              <div className="col-12 col-md-6 d-flex align-items-center bienvenida my-3 p-3">
+                <h1>Bienvenido a la Lista de Koders</h1>
+              </div>
+              <div className="col-12 col-md-6 d-flex align-items-center">
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Generation</th>
+                        <th scope="col">Type of Bootcamp</th>
+                      </tr>
+                    </thead>
+                    <KodersList
+                      listHandler={koders}
+                    />
+                  </table>
+                </div>
+            </div>
+            <div className="row">
+                  <div className="col-12 col-md-6 d-flex align-items-center">
+                    <h2>Registra un nuevo Koder</h2>
+                    <Form
+                      newKoderData={this.onclickHandler}
+                    />
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <h2>Busca un Koder</h2>
+                    <div>
+                      <input type="text" placeholder="Ingresa el nombre" onChange={this.onHandlerFinder} />
+                    </div>
+                  </div>
+              </div>
+          </div>
         </div>
-
-      </>
+      </div>
+        
       )
   }
 }

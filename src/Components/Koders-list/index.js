@@ -7,7 +7,7 @@ function kodersList (props){
             let {name, generation, bootcamp} = koder
             return(
             
-                    <tbody>
+                    <tbody className="col-12 col-6">
                         <tr>
                             <th scope="row">1</th>
                             <td>{name}</td>

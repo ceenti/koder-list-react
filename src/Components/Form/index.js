@@ -26,15 +26,15 @@ class Formi extends Component{
             <Form>
                 <FormGroup>
                     <Label for="exampleEmail">Ingresa el nombre</Label>
-                    <Input type="email" name="name"  placeholder="with a placeholder" onChange= {this.createKoderHandler} />
+                    <Input type="email" name="name"  placeholder="nombre" onChange= {this.createKoderHandler} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleEmail">¿Qué generación?</Label>
-                    <Input type="email" name="generation"  placeholder="with a placeholder" onChange= {this.createKoderHandler} />
+                    <Input type="email" name="generation"  placeholder="Generation" onChange= {this.createKoderHandler} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleEmail">Tipo de BootCamp</Label>
-                    <Input type="email" name="bootcamp"  placeholder="with a placeholder" onChange= {this.createKoderHandler} />
+                    <Input type="email" name="bootcamp"  placeholder="BootCamp" onChange= {this.createKoderHandler} />
                 </FormGroup>
                 <Button color="success" type="button" onClick= {
                         () => {

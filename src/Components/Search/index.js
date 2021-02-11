@@ -24,6 +24,8 @@ class Search extends Component{
 
     render(){
         return(
+            <>
+            <h1>Busca un koder</h1>
             <div>
                 <input type="text" placeholder="Ingresa el nombre" onChange={
                     () => {
@@ -32,6 +34,8 @@ class Search extends Component{
                 }/>
                 {/* <button type="button">Search</button> */}
             </div>
+        
+            </>
         )
     }
 }
