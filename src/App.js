@@ -50,9 +50,20 @@ class App extends Component{
     return(
       <>
         <h1>Bienvenido a la lista de koders</h1>
+        <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Generation</th>
+            <th scope="col">Type of Bootcamp</th>
+          </tr>
+        </thead>
         <KodersList 
           listHandler = {koders}
         />
+        </table>
+    
 
         <Form
           newKoderData = {this.onclickHandler}
