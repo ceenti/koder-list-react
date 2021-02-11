@@ -3,8 +3,7 @@ import './App.css';
 import React, {Component} from 'react'
 import KodersList from './Components/Koders-list/index'
 import Form from './Components/Form/index'
-import kodersList from './Components/Koders-list/index';
-// import Search from './Components/Search/index'
+import SearchInput from './Components/Search/index'
 
 class App extends Component{
   constructor(){
@@ -22,9 +21,7 @@ class App extends Component{
           bootcamp: "Javascript"
         }
       ],
-      filteredList: [
-
-      ]
+      filteredList: []
     
     }
     this.onclickHandler = this.onclickHandler.bind(this)
@@ -38,15 +35,14 @@ class App extends Component{
 
  
   onHandlerFinder(event){
-    let letterToFind = event.target.value
+    let letterToFind = event.target.value.toLowerCase()
       let filteredKoderList = this.state.kodersList.filter(koder => {
-          return  koder.name.includes(letterToFind)
+          return  koder.name.toLowerCase().includes(letterToFind)
       })
       this.setState({filteredList: filteredKoderList})
   } 
 
   render(){
-    let koders = this.state.filteredList.length ? this.state.filteredList : this.state.kodersList
     return(
     
       <div className="container-fluid">
@@ -67,7 +63,11 @@ class App extends Component{
                       </tr>
                     </thead>
                     <KodersList
-                      listHandler={koders}
+                      listHandler={
+                        this.state.filteredList.length 
+                        ? this.state.filteredList 
+                        : this.state.kodersList
+                      }
                     />
                   </table>
                 </div>
@@ -81,9 +81,9 @@ class App extends Component{
                   </div>
                   <div className="col-12 col-md-6">
                     <h2>Busca un Koder</h2>
-                    <div>
-                      <input type="text" placeholder="Ingresa el nombre" onChange={this.onHandlerFinder} />
-                    </div>
+                    <SearchInput
+                      filterHandler = {this.onHandlerFinder}
+                    />
                   </div>
               </div>
           </div>
