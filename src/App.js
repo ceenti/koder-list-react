@@ -30,7 +30,7 @@ class App extends Component{
   }
 
   onclickHandler(newKoder){
-    this.setState({kodersList : [...this.state.kodersList, newKoder]})
+    this.setState({kodersList : [...this.state.kodersList, {...newKoder}]})
   }
 
  
